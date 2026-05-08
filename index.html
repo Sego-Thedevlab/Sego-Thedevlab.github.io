@@ -1,216 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sebastian Segovia | XR Developer</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sebastian Segovia Medina | XR & Game Developer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #050816;
+  --bg-secondary: #0f172a;
+  --bg-card: rgba(15, 23, 42, 0.75);
+  --accent: #38bdf8;
+  --accent-2: #8b5cf6;
+  --text: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --border: rgba(255,255,255,0.08);
+}
+
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #0a0f1c;
-  color: #e2e8f0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to bottom, #020617, #0f172a);
+  color: var(--text);
+  overflow-x: hidden;
 }
 
-header {
-  padding: 80px 20px;
-  text-align: center;
+html {
+  scroll-behavior: smooth;
 }
 
-h1 {
-  font-size: 3em;
-  margin: 0;
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(18px);
+  background: rgba(5, 8, 22, 0.7);
+  border-bottom: 1px solid var(--border);
 }
 
-.subtitle {
-  color: #38bdf8;
-  margin-top: 10px;
+.nav-container {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
 }
 
-.section {
-  padding: 40px 10%;
+.logo {
+  font-weight: 800;
+  font-size: 1.1rem;
 }
 
-h2 {
+.logo span {
+  color: var(--accent);
+}
+
+nav ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 10%;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1300px;
+}
+
+.hero-text h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1;
   margin-bottom: 20px;
-  color: #38bdf8;
 }
 
+.hero-text h1 span {
+  color: var(--accent);
+}
+
+.hero-text p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 24px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: white;
+}
+
+.btn-secondary {
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.hero-card,
 .card {
-  background: #111827;
-  padding: 20px;
-  margin: 15px 0;
-  border-radius: 12px;
-  transition: 0.3s;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 28px;
+  border-radius: 22px;
+  backdrop-filter: blur(12px);
+  transition: all 0.35s ease;
 }
 
 .card:hover {
-  transform: scale(1.02);
-  background: #1f2937;
+  transform: translateY(-6px);
+}
+
+section {
+  padding: 100px 10%;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.section-title span {
+  color: var(--accent);
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
 }
 
-a {
-  color: #38bdf8;
-  text-decoration: none;
+.timeline {
+  display: grid;
+  gap: 24px;
 }
 
-.footer {
+.timeline-item .date {
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.tag {
+  background: rgba(56,189,248,0.12);
+  border: 1px solid rgba(56,189,248,0.2);
+  color: var(--accent);
+  padding: 10px 16px;
+  border-radius: 999px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  color: white;
+  margin-bottom: 16px;
+}
+
+footer {
+  padding: 40px;
   text-align: center;
-  padding: 30px;
-  font-size: 0.9em;
-  opacity: 0.6;
+  border-top: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+@media(max-width: 900px){
+  .hero-content {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    display: none;
+  }
 }
 </style>
-
 </head>
 
 <body>
 
-<header>
-  <h1>Sebastian Segovia</h1>
-  <p class="subtitle">XR Developer • Unity Engineer • Interactive Systems</p>
-</header>
+<nav>
+  <div class="nav-container">
+    <div class="logo">Sebastian<span>Segovia</span></div>
 
-<section class="section">
-  <h2>Contact Me</h2>
-  <div class="card">
-    <p>📍 Medellín, Colombia</p>
-    <p>📞 +57 317 728 3760</p>
-    <p>✉️ sebastiansegoviamedina@gmail.com</p>
-    <p>🔗 <a href="https://linkedin.com/in/sebastian-segovia-medina" target="_blank">LinkedIn</a></p>
-    <p>🔗 <a href="https://drive.google.com/drive/folders/1exIU2Wl1Ugrl13nE392OMAYsbcxcgpuS" target="_blank">Portfolio</a></p>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+
+    <div class="hero-text">
+      <h1><span id="typing"></span></h1>
+
+      <p>
+        Digital Entertainment Design Engineer and XR Developer with 6+ years of experience creating immersive games and interactive systems for VR, AR, mobile, and PC platforms.
+      </p>
+
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="https://linkedin.com/in/sebastian-segovia-medina">LinkedIn</a>
+        <a class="btn btn-secondary" href="#">Portfolio</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <h3>Professional Information</h3>
+
+      <div class="tags">
+        <div class="tag">Unity</div>
+        <div class="tag">C#</div>
+        <div class="tag">VR</div>
+        <div class="tag">AR</div>
+        <div class="tag">AI Systems</div>
+        <div class="tag">Meta Quest</div>
+      </div>
+    </div>
+
   </div>
 </section>
-  
-<section class="section">
-  <h2>About</h2>
+
+<section id="about">
+  <h2 class="section-title">About <span>Me</span></h2>
+
   <div class="card">
-    Digital Entertainment Design Engineer and XR Developer with 7+ years of experience building interactive applications, VR/AR systems, and video games. Specialized in Unity and C#, with strong expertise in scalable immersive architectures, authentication systems, licensing, remote content delivery, and AI-powered virtual assistants.
-    <br><br>
-    Experienced in optimizing VR applications for standalone hardware such as Meta Quest, focusing on CPU/GPU performance, draw call reduction, and efficient memory management.
+    Specialized in gameplay programming, multiplayer systems, AI integrations, authentication systems, scalable VR architectures, UI/UX, optimization, shaders, and production pipelines.
   </div>
 </section>
-  
-<section class="section">
-  <h2>Experience</h2>
 
-  <div class="card">
-    <strong>Game Developer — Creative Innovation Company</strong>
-    <p><em>Nov 2024 – Mar 2026</em></p>
-    <ul>
-      <li>Developed gamified VR experiences using Unity and C#</li>
-      <li>Built authentication, analytics, and data tracking systems (Firebase, SQL, HTTP)</li>
-      <li>Implemented mobile licensing systems (Android & iOS)</li>
-      <li>Created remote content delivery systems via HTTP</li>
-      <li>Integrated AI-powered virtual assistants in VR environments</li>
-      <li>Developed interactive brand activation experiences</li>
-    </ul>
+<section id="experience">
+  <h2 class="section-title">Professional <span>Experience</span></h2>
+
+  <div class="timeline">
+
+    <div class="card timeline-item">
+      <h3>Game Developer — Creative Innovation Company</h3>
+      <div class="date">Oct 2024 – Mar 2026</div>
+      <p>Lead developer of gamified VR experiences and scalable immersive systems.</p>
+    </div>
+
+    <div class="card timeline-item">
+      <h3>Game Developer — Timba Games</h3>
+      <div class="date">May 2022 – Feb 2024</div>
+      <p>Gameplay systems development and optimization for Puppet Kings.</p>
+    </div>
+
+    <div class="card timeline-item">
+      <h3>Interactive Digital Developer — Konecta</h3>
+      <div class="date">Feb 2021 – Mar 2022</div>
+      <p>AR applications and AI virtual assistant integrations using C#/.NET.</p>
+    </div>
+
   </div>
-
-  <div class="card">
-    <strong>Game Developer Intern — Creative Innovation Company</strong>
-    <p><em>Mar 2024 – Oct 2024</em></p>
-    <ul>
-      <li>Developed gamified simulations and realistic avatars with iOS face tracking (Unreal Engine)</li>
-      <li>Optimized applications for Meta Quest 2 standalone hardware</li>
-      <li>Built reusable VR interaction frameworks</li>
-      <li>Created VFX and shaders using Shader Graph & Visual Effect Graph</li>
-      <li>Improved VR development pipelines</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <strong>Game Developer — Timba Games</strong>
-    <p><em>Apr 2021 – Mar 2024</em></p>
-    <ul>
-      <li>Developed VR games using Unity (C#) and VRTK v4</li>
-      <li>Implemented gameplay systems, events, and physics simulations</li>
-      <li>Maintained and updated live products</li>
-      <li>Built VR interaction and event systems</li>
-      <li>Developed procedural vegetation rendering systems (URP)</li>
-      <li>Created 3D assets using Blender and ProBuilder</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <strong>Junior Game Developer — Konecta Group</strong>
-    <p><em>Feb 2020 – Mar 2021</em></p>
-    <ul>
-      <li>Developed AR applications from concept to deployment</li>
-      <li>Implemented interaction systems and state management</li>
-      <li>Designed and animated UI systems</li>
-      <li>Built physics and event-driven mechanics</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <strong>Entry Game Developer — Impresoras y Suministros de Colombia</strong>
-    <p><em>Jan 2018 – Dec 2019</em></p>
-    <ul>
-      <li>Developed AR product visualization apps (Android)</li>
-      <li>Integrated multimedia content and 3D assets</li>
-      <li>Designed UI/UX and interaction flows</li>
-      <li>Created assets and VFX using Blender</li>
-    </ul>
-  </div>
-
 </section>
 
-<section class="section">
-  <h2>Systems Built</h2>
+<section id="projects">
+  <h2 class="section-title">Relevant <span>Projects</span></h2>
 
   <div class="grid">
-    <div class="card">Authentication & Progress Tracking Systems</div>
-    <div class="card">Software Licensing Systems</div>
-    <div class="card">Remote Content Delivery (HTTP)</div>
-    <div class="card">Modular VR Interaction Frameworks</div>
-    <div class="card">AI Virtual Assistants</div>
-    <div class="card">Analytics Systems (Firebase / CRM)</div>
-    <div class="card">VR Avatars (Ready Player Me)</div>
-    <div class="card">Metahuman Avatars with Face Tracking</div>
-  </div>
 
+    <div class="card">
+      <h3>Meta Venus</h3>
+      <p>Metaverse platform with Metahuman avatars and real-time face tracking.</p>
+    </div>
+
+    <div class="card">
+      <h3>SEAM VR</h3>
+      <p>VR physiotherapy experience designed for elderly users.</p>
+    </div>
+
+    <div class="card">
+      <h3>Puppet Kings</h3>
+      <p>Breakout roguelike game optimized for Steam deployment.</p>
+    </div>
+
+  </div>
 </section>
 
-<section class="section">
-  <h2>Tech Stack</h2>
+<section id="skills">
+  <h2 class="section-title">Technical <span>Skills</span></h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Game Engines</h3>
+      <p>Unity • Unreal Engine • XR Frameworks</p>
+    </div>
+
+    <div class="card">
+      <h3>Programming</h3>
+      <p>C# • Python • .NET • REST APIs</p>
+    </div>
+
+    <div class="card">
+      <h3>Tools</h3>
+      <p>Git • GitHub • Blender • Firebase</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">Get In <span>Touch</span></h2>
+
   <div class="card">
-    <strong>Languages:</strong> C#, Unreal Blueprints, Visual Graph<br><br>
-    <strong>Engines:</strong> Unity (Advanced), Unreal Engine (Intermediate)<br><br>
-    <strong>XR/AR:</strong> Unity XR, Oculus SDK, VRTK v4, Vuforia<br><br>
-    <strong>Systems:</strong> REST APIs, Firebase, SQL, HTTP, Cloud Storage<br><br>
-    <strong>Tools:</strong> Git, GitHub, Visual Studio, Blender, Photoshop
+
+    <form>
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <textarea rows="5" placeholder="Tell me about your project"></textarea>
+
+      <button class="btn btn-primary">Send Message</button>
+    </form>
+
   </div>
 </section>
 
-<section class="section">
-  <h2>Education</h2>
-  <div class="card">
-    <strong>B.Sc. in Digital Entertainment Design Engineering</strong><br>
-    Universidad Pontificia Bolivariana<br>
-    <em>2020 – 2025</em><br><br>
+<footer>
+  © 2026 Sebastian Segovia Medina — XR Developer
+</footer>
 
-    Relevant coursework: Computer Graphics, Artificial Intelligence, Software Architecture, Distributed Interactive Systems, Simulation Systems, OOP, IoT
-  </div>
-</section>
+<script>
+const words = [
+  "XR Developer",
+  "Game Developer",
+  "Unity Engineer",
+  "VR Specialist"
+];
 
-<section class="section">
-  <h2>Languages</h2>
-  <div class="card">
-    Spanish (Native) • English (C1)
-  </div>
-</section>
+let i = 0;
+let j = 0;
+let currentWord = "";
+let isDeleting = false;
 
-<div class="footer">
-  © 2026 Sebastian Segovia
-</div>
+function type() {
+  currentWord = words[i];
+
+  if(isDeleting) {
+    document.getElementById('typing').textContent = currentWord.substring(0, j--);
+  } else {
+    document.getElementById('typing').textContent = currentWord.substring(0, j++);
+  }
+
+  if(!isDeleting && j === currentWord.length) {
+    isDeleting = true;
+    setTimeout(type, 1200);
+    return;
+  }
+
+  if(isDeleting && j === 0) {
+    isDeleting = false;
+    i = (i + 1) % words.length;
+  }
+
+  setTimeout(type, isDeleting ? 50 : 100);
+}
+
+type();
+</script>
 
 </body>
 </html>

@@ -183,10 +183,11 @@ nav a:hover{
     padding:28px;
 
     transition:
-    transform .35s ease,
-    box-shadow .35s ease,
-    border-color .35s ease;
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
 }
+
 
 /* Glow base */
 .card::before{
@@ -194,19 +195,20 @@ nav a:hover{
 
     position:absolute;
 
-    inset:-40%;
+    inset:-30%;
 
     background:
-    radial-gradient(
-        circle at top left,
-        rgba(56,189,248,.22) 0%,
-        rgba(56,189,248,.10) 25%,
-        transparent 65%
-    );
+        radial-gradient(
+            ellipse at top left,
+            rgba(56,189,248,.24) 0%,
+            rgba(56,189,248,.14) 20%,
+            rgba(56,189,248,.06) 40%,
+            transparent 72%
+        );
 
     opacity:0;
 
-    transform:scale(1.2);
+    transform:scale(1.15);
 
     transition:
         opacity .35s ease,
@@ -221,27 +223,29 @@ nav a:hover{
 
     position:absolute;
 
-    top:-120%;
+    top:-150%;
     left:-250%;
 
     width:220%;
-    height:350%;
+    height:400%;
 
     background:
-    linear-gradient(
-        115deg,
-        transparent 35%,
-        rgba(255,255,255,.03) 45%,
-        rgba(255,255,255,.12) 50%,
-        rgba(255,255,255,.03) 55%,
-        transparent 65%
-    );
+        linear-gradient(
+            115deg,
+            transparent 35%,
+            rgba(255,255,255,.03) 45%,
+            rgba(255,255,255,.14) 50%,
+            rgba(255,255,255,.03) 55%,
+            transparent 65%
+        );
 
     transform:rotate(25deg);
+
     transition:transform .9s ease;
 
     pointer-events:none;
 }
+
 
 /* Hover */
 .card:hover{
@@ -253,7 +257,7 @@ nav a:hover{
 
     box-shadow:
         0 10px 30px rgba(0,0,0,.35),
-        0 0 25px rgba(56,189,248,.08);
+        0 0 25px rgba(56,189,248,.10);
 }
 
 /* Activate glow */

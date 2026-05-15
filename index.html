@@ -188,7 +188,7 @@ nav a:hover{
     border-color .35s ease;
 }
 
-/* Highlight glow */
+/* Glow base */
 .card::before{
     content:'';
 
@@ -208,6 +208,7 @@ nav a:hover{
     pointer-events:none;
 }
 
+/* Shine sweep */
 .card::after{
     content:'';
 
@@ -234,7 +235,8 @@ nav a:hover{
 
     pointer-events:none;
 }
-    
+
+/* Hover */
 .card:hover{
     transform:
         translateY(-8px)
@@ -243,21 +245,20 @@ nav a:hover{
     border-color:rgba(56,189,248,.35);
 
     box-shadow:
-    0 10px 30px rgba(0,0,0,.35),
-    0 0 25px rgba(56,189,248,.08);
+        0 10px 30px rgba(0,0,0,.35),
+        0 0 25px rgba(56,189,248,.08);
 }
-    
-/* Activate highlight */
-.card{
+
+/* Activate glow */
+.card:hover::before{
     opacity:1;
-    position:relative;
-    overflow:hidden;
 }
-    
+
+/* Activate sweep */
 .card:hover::after{
     transform:
-    rotate(25deg)
-    translateX(180%);
+        rotate(25deg)
+        translateX(180%);
 }
     
 .hero-card{

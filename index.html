@@ -91,10 +91,10 @@ nav a:hover{
 }
 
 .hero-container{
-    max-width:1300px;
+    max-width:1600px;
     width:100%;
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1.4fr .9fr;
     gap:80px;
     align-items:center;
 }
@@ -106,25 +106,33 @@ nav a:hover{
 .hero-content{
     display:flex;
     align-items:center;
-    gap:40px;
+    gap:50px;
+    width:100%;
 }
 
 .hero-image{
-    width:320px;
-    height:420px;
+    width:360px;
+    height:480px;
     object-fit:cover;
-    border-radius:24px;
+    border-radius:28px;
     flex-shrink:0;
 }
 
 .hero-text{
     flex:1;
+    min-width:0;
 }
 
 .hero h1{
-    font-size:clamp(3rem,6vw,5rem);
-    line-height:1;
-    margin-bottom:20px;
+    font-size:clamp(3.2rem,5vw,5.5rem);
+    line-height:.95;
+    margin-bottom:24px;
+    min-height:110px;
+}
+
+#typing{
+    display:block;
+    white-space:nowrap;
 }
 
 .hero h1 span{

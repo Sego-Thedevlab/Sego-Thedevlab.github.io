@@ -172,18 +172,85 @@ nav a:hover{
 }
 
 .card{
+    position:relative;
+    overflow:hidden;
+
     background:rgba(15,23,42,.75);
     border:1px solid rgba(255,255,255,.08);
     backdrop-filter:blur(12px);
+
     border-radius:22px;
     padding:28px;
-    transition:.35s;
+
+    transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
 }
 
+/* Highlight glow */
+.card::before{
+    content:'';
+
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at top left,
+        rgba(56,189,248,.18),
+        transparent 35%
+    );
+
+    opacity:0;
+    transition:opacity .35s ease;
+
+    pointer-events:none;
+}
+
+.card::after{
+    content:'';
+
+    position:absolute;
+    top:-50%;
+    left:-50%;
+
+    width:200%;
+    height:200%;
+
+    background:
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.05),
+        transparent
+    );
+
+    transform:rotate(25deg) translateX(-120%);
+    transition:transform .8s ease;
+
+    pointer-events:none;
+}
+    
 .card:hover{
     transform:translateY(-8px);
-}
 
+    border-color:rgba(56,189,248,.35);
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.35),
+    0 0 25px rgba(56,189,248,.08);
+}
+    
+/* Activate highlight */
+.card:hover::before{
+    opacity:1;
+}
+    
+.card:hover::after{
+    transform:rotate(25deg) translateX(120%);
+}
+    
 .hero-card{
     width:100%;
     max-width:380px;

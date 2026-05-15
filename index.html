@@ -186,77 +186,29 @@ nav a:hover{
         transform .35s ease,
         box-shadow .35s ease,
         border-color .35s ease;
-
-    isolation:isolate;
 }
 
-/* FULL SIZE RESPONSIVE GLOW */
+/* SOFT HIGHLIGHT */
 .card::before{
     content:'';
 
     position:absolute;
-
     inset:0;
 
     background:
         radial-gradient(
-            ellipse 140% 100% at top left,
-            rgba(56,189,248,.24) 0%,
-            rgba(56,189,248,.14) 22%,
-            rgba(56,189,248,.07) 42%,
-            transparent 72%
+            ellipse farthest-side at top left,
+            rgba(56,189,248,.18) 0%,
+            rgba(56,189,248,.10) 28%,
+            rgba(56,189,248,.04) 45%,
+            transparent 70%
         );
 
     opacity:0;
 
-    transition:
-        opacity .35s ease,
-        transform .45s ease;
-
-    transform:scale(1.08);
+    transition:opacity .35s ease;
 
     pointer-events:none;
-
-    z-index:0;
-}
-
-/* SHINE */
-.card::after{
-    content:'';
-
-    position:absolute;
-
-    top:-50%;
-    left:-60%;
-
-    width:70%;
-    height:220%;
-
-    background:
-        linear-gradient(
-            115deg,
-            transparent 0%,
-            rgba(255,255,255,.02) 40%,
-            rgba(255,255,255,.12) 50%,
-            rgba(255,255,255,.02) 60%,
-            transparent 100%
-        );
-
-    transform:
-        rotate(25deg)
-        translateX(0);
-
-    transition:transform .9s ease;
-
-    pointer-events:none;
-
-    z-index:1;
-}
-
-/* KEEP CONTENT ABOVE EFFECTS */
-.card > *{
-    position:relative;
-    z-index:2;
 }
 
 /* HOVER */
@@ -269,20 +221,12 @@ nav a:hover{
 
     box-shadow:
         0 10px 30px rgba(0,0,0,.35),
-        0 0 30px rgba(56,189,248,.12);
+        0 0 25px rgba(56,189,248,.08);
 }
 
-/* ACTIVATE GLOW */
+/* ACTIVATE HIGHLIGHT */
 .card:hover::before{
     opacity:1;
-    transform:scale(1);
-}
-
-/* ACTIVATE SHINE */
-.card:hover::after{
-    transform:
-        rotate(25deg)
-        translateX(320%);
 }
     
 .hero-card{

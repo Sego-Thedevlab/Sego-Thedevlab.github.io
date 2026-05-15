@@ -390,6 +390,7 @@ footer{
     color:inherit;
     text-decoration:none;
     font-weight:700;
+    cursor:pointer;
 }
 
 .project-title-link:hover{
@@ -772,17 +773,13 @@ Performance optimization for standalone VR hardware including CPU/GPU profiling,
 
 <div class="grid">
 
-<a class="card fade card-link project-card" href="https://TU_PROYECTO_WEB.com" target="_blank" rel="noopener noreferrer">
+<a class="card fade card-link project-card" href="https://store.steampowered.com" target="_blank" rel="noopener noreferrer">
 
     <img class="project-img" src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Projects/PuppetKings.png" alt="Puppet Kings">
 
     <div class="project-content">
 
-        <h3>
-            <a class="project-title-link" href="https://store.steampowered.com" target="_blank" rel="noopener noreferrer">
-                Puppet Kings
-            </a>
-        </h3>
+        <h3>Puppet Kings</h3>
 
         <p>
             Breakout-inspired roguelike game featuring unique characters, boss fights, and procedural gameplay systems optimized for Steam.
@@ -1057,6 +1054,14 @@ setTimeout(type,deleting?50:100);
 }
 
 type();
+
+document.querySelectorAll('.project-title-link').forEach(el => {
+    el.addEventListener('click', (e) => {
+        e.stopPropagation(); // evita que dispare el link de la card
+        window.open(el.dataset.href, '_blank', 'noopener');
+    });
+});
+    
 </script>
 
 </body>

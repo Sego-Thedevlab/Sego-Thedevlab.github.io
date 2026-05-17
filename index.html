@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
     <title>Sebastian Segovia Medina | XR Developer</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <style>
         * {
@@ -22,27 +25,27 @@
         }
 
         body {
-            font-family: 'Inter',sans-serif;
+            font-family: 'Inter', sans-serif;
             background: #050816;
             color: white;
             overflow-x: hidden;
         }
 
-            body::before {
-                content: '';
-                position: fixed;
-                inset: 0;
-                background: radial-gradient(circle at top left, rgba(56,189,248,0.15), transparent 25%), radial-gradient(circle at bottom right, rgba(139,92,246,0.12), transparent 25%);
-                z-index: -1;
-            }
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.15), transparent 25%), radial-gradient(circle at bottom right, rgba(139, 92, 246, 0.12), transparent 25%);
+            z-index: -1;
+        }
 
         nav {
             position: fixed;
             top: 0;
             width: 100%;
             backdrop-filter: blur(20px);
-            background: rgba(5,8,22,.75);
-            border-bottom: 1px solid rgba(255,255,255,.08);
+            background: rgba(5, 8, 22, .75);
+            border-bottom: 1px solid rgba(255, 255, 255, .08);
             z-index: 1000;
         }
 
@@ -60,9 +63,9 @@
             font-weight: 800;
         }
 
-            .logo span {
-                color: #38bdf8;
-            }
+        .logo span {
+            color: #38bdf8;
+        }
 
         nav ul {
             display: flex;
@@ -76,9 +79,9 @@
             transition: .3s;
         }
 
-            nav a:hover {
-                color: #38bdf8;
-            }
+        nav a:hover {
+            color: #38bdf8;
+        }
 
         .hero {
             min-height: 100vh;
@@ -92,7 +95,7 @@
             width: 100%;
             max-width: 1600px;
             display: grid;
-            grid-template-columns: minmax(260px,360px) minmax(420px,1fr) minmax(320px,380px);
+            grid-template-columns: minmax(260px, 360px) minmax(420px, 1fr) minmax(320px, 380px);
             gap: 50px;
             align-items: center;
         }
@@ -117,7 +120,7 @@
         }
 
         .hero h1 {
-            font-size: clamp(3rem,6vw,5rem);
+            font-size: clamp(3rem, 6vw, 5rem);
             line-height: .95;
             margin-bottom: 24px;
             min-height: 110px;
@@ -151,12 +154,12 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg,#38bdf8,#8b5cf6);
+            background: linear-gradient(135deg, #38bdf8, #8b5cf6);
             color: white;
         }
 
         .btn-secondary {
-            border: 1px solid rgba(255,255,255,.1);
+            border: 1px solid rgba(255, 255, 255, .1);
             color: white;
         }
 
@@ -167,8 +170,8 @@
         .card {
             position: relative;
             overflow: hidden;
-            background: rgba(15,23,42,.75);
-            border: 1px solid rgba(255,255,255,.08);
+            background: rgba(15, 23, 42, .75);
+            border: 1px solid rgba(255, 255, 255, .08);
             backdrop-filter: blur(12px);
             border-radius: 22px;
             padding: 28px;
@@ -187,7 +190,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient( ellipse farthest-side at top left, rgba(56,189,248,.18) 0%, rgba(56,189,248,.10) 28%, rgba(56,189,248,.04) 45%, transparent 70% );
+            background: radial-gradient(ellipse farthest-side at top left, rgba(56, 189, 248, .18) 0%, rgba(56, 189, 248, .10) 28%, rgba(56, 189, 248, .04) 45%, transparent 70%);
             opacity: 0;
             transition: opacity .35s ease;
             pointer-events: none;
@@ -196,14 +199,14 @@
         /* HOVER */
         .card:hover {
             transform: translateY(-12px) scale(1.03);
-            border-color: rgba(56,189,248,.4);
-            box-shadow: 0 18px 45px rgba(0,0,0,.45), 0 0 35px rgba(56,189,248,.12);
+            border-color: rgba(56, 189, 248, .4);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, .45), 0 0 35px rgba(56, 189, 248, .12);
         }
 
-            /* ACTIVATE HIGHLIGHT */
-            .card:hover::before {
-                opacity: 1;
-            }
+        /* ACTIVATE HIGHLIGHT */
+        .card:hover::before {
+            opacity: 1;
+        }
 
         .hero-card {
             width: 100%;
@@ -211,21 +214,21 @@
             justify-self: center;
         }
 
-            .hero-card ul {
-                list-style: none;
-                display: grid;
-                gap: 16px;
-            }
+        .hero-card ul {
+            list-style: none;
+            display: grid;
+            gap: 16px;
+        }
 
-            .hero-card li {
-                color: #cbd5e1;
-            }
+        .hero-card li {
+            color: #cbd5e1;
+        }
 
-            .project-card:hover,
-            .hero-card:hover,
-            .card-link:hover {
-                transform: translateY(-12px) scale(1.03);
-            }
+        .project-card:hover,
+        .hero-card:hover,
+        .card-link:hover {
+            transform: translateY(-12px) scale(1.03);
+        }
 
         section {
             padding: 100px 10%;
@@ -236,9 +239,9 @@
             margin-bottom: 20px;
         }
 
-            .section-title span {
-                color: #38bdf8;
-            }
+        .section-title span {
+            color: #38bdf8;
+        }
 
         .section-description {
             color: #94a3b8;
@@ -251,7 +254,7 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 24px;
         }
 
@@ -291,8 +294,8 @@
         .tag {
             padding: 10px 16px;
             border-radius: 999px;
-            background: rgba(56,189,248,.12);
-            border: 1px solid rgba(56,189,248,.2);
+            background: rgba(56, 189, 248, .12);
+            border: 1px solid rgba(56, 189, 248, .2);
             color: #38bdf8;
         }
 
@@ -301,8 +304,8 @@
             width: 100%;
             padding: 16px;
             border-radius: 14px;
-            border: 1px solid rgba(255,255,255,.08);
-            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(255, 255, 255, .08);
+            background: rgba(255, 255, 255, .04);
             color: white;
             margin-bottom: 16px;
         }
@@ -311,7 +314,7 @@
             text-align: center;
             padding: 40px;
             color: #94a3b8;
-            border-top: 1px solid rgba(255,255,255,.08);
+            border-top: 1px solid rgba(255, 255, 255, .08);
         }
 
         .fade {
@@ -320,10 +323,10 @@
             transition: 1s ease;
         }
 
-            .fade.show {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .fade.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         .exp-row {
             display: flex;
@@ -336,7 +339,7 @@
             height: 100px;
             object-fit: cover;
             border-radius: 16px;
-            border: 1px solid rgba(255,255,255,.08);
+            border: 1px solid rgba(255, 255, 255, .08);
             flex-shrink: 0;
         }
 
@@ -347,7 +350,8 @@
         .project-card {
             display: block;
             overflow: hidden;
-            padding: 0; /* importante para full image */
+            padding: 0;
+            /* importante para full image */
         }
 
         .project-img {
@@ -368,9 +372,9 @@
             cursor: pointer;
         }
 
-            .project-title-link:hover {
-                color: #38bdf8;
-            }
+        .project-title-link:hover {
+            color: #38bdf8;
+        }
 
         /* ========================= */
         /* DESKTOP MEDIANO */
@@ -379,7 +383,7 @@
         @media(max-width:1250px) {
 
             .hero-container {
-                grid-template-columns: minmax(260px,340px) 1fr;
+                grid-template-columns: minmax(260px, 340px) 1fr;
             }
 
             .hero-card {
@@ -444,7 +448,7 @@
         @media(max-width:600px) {
 
             .hero h1 {
-                font-size: clamp(2.4rem,10vw,4rem);
+                font-size: clamp(2.4rem, 10vw, 4rem);
             }
 
             .hero p {
@@ -461,7 +465,8 @@
             }
 
             .exp-row {
-                flex-direction: row; /* mantiene tu estructura general */
+                flex-direction: row;
+                /* mantiene tu estructura general */
             }
 
             .exp-img {
@@ -498,8 +503,7 @@
             <div class="hero-image-container">
 
                 <img src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/DSC02808%20copy.png"
-                     alt="Sebastian XR Developer"
-                     class="hero-image">
+                    alt="Sebastian XR Developer" class="hero-image">
 
             </div>
 
@@ -510,26 +514,24 @@
                 <h1><span id="typing"></span></h1>
 
                 <p>
-                    Digital Entertainment Design Engineer and XR Developer with over 6 years of professional experience building immersive games and interactive experiences using Unity Engine for PC, mobile, VR, and AR platforms. Specialized in gameplay programming, multiplayer systems, backend support systems, user authentication and licensing, AI integration, UI/UX, optimization, shaders, and scalable production pipelines.
+                    Digital Entertainment Design Engineer and XR Developer with over 6 years of professional experience
+                    building immersive games and interactive experiences using Unity Engine for PC, mobile, VR, and AR
+                    platforms. Specialized in gameplay programming, multiplayer systems, backend support systems, user
+                    authentication and licensing, AI integration, UI/UX, optimization, shaders, and scalable production
+                    pipelines.
                 </p>
 
                 <div class="buttons">
 
-                    <a class="btn btn-primary"
-                       href="https://linkedin.com/in/sebastian-segovia-medina"
-                       target="_blank">
+                    <a class="btn btn-primary" href="https://linkedin.com/in/sebastian-segovia-medina" target="_blank">
                         LinkedIn
                     </a>
 
-                    <a class="btn btn-primary"
-                       href="https://github.com/Sego-Thedevlab"
-                       target="_blank">
+                    <a class="btn btn-primary" href="https://github.com/Sego-Thedevlab" target="_blank">
                         GitHub
                     </a>
 
-                    <a class="btn btn-primary"
-                       href="https://bit.ly/3Ps9kiY"
-                       target="_blank">
+                    <a class="btn btn-primary" href="https://bit.ly/3Ps9kiY" target="_blank">
                         Portfolio
                     </a>
 
@@ -573,7 +575,10 @@
         <h2 class="section-title">About <span>Me</span></h2>
 
         <p class="section-description">
-            I focus on building immersive systems that combine gameplay, artificial intelligence, scalable architectures, and high-performance rendering for XR experiences. My background includes VR interaction systems, multiplayer support, gameplay frameworks, backend services, analytics systems, UI/UX workflows, and immersive production pipelines.
+            I focus on building immersive systems that combine gameplay, artificial intelligence, scalable
+            architectures, and high-performance rendering for XR experiences. My background includes VR interaction
+            systems, multiplayer support, gameplay frameworks, backend services, analytics systems, UI/UX workflows, and
+            immersive production pipelines.
         </p>
 
         <div class="grid">
@@ -581,21 +586,24 @@
             <div class="card fade">
                 <h3>XR Development</h3>
                 <p>
-                    Advanced development of immersive applications for Meta Quest, VR, AR, desktop, and mobile platforms.
+                    Advanced development of immersive applications for Meta Quest, VR, AR, desktop, and mobile
+                    platforms.
                 </p>
             </div>
 
             <div class="card fade">
                 <h3>Gameplay Systems</h3>
                 <p>
-                    Design and implementation of modular gameplay mechanics, event-driven architectures, and reusable interaction systems.
+                    Design and implementation of modular gameplay mechanics, event-driven architectures, and reusable
+                    interaction systems.
                 </p>
             </div>
 
             <div class="card fade">
                 <h3>Optimization</h3>
                 <p>
-                    Performance optimization for standalone VR hardware including CPU/GPU profiling, batching, memory management, and draw-call reduction.
+                    Performance optimization for standalone VR hardware including CPU/GPU profiling, batching, memory
+                    management, and draw-call reduction.
                 </p>
             </div>
 
@@ -607,13 +615,14 @@
 
         <div class="timeline">
 
-            <a class="card fade card-link" href="https://agencycic.com/inicio" target="_blank" rel="noopener noreferrer">
+            <a class="card fade card-link" href="https://agencycic.com/inicio" target="_blank"
+                rel="noopener noreferrer">
 
                 <div class="exp-row">
 
                     <img class="exp-img"
-                         src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Experiences/CIC.png"
-                         alt="Creative Innovation Company">
+                        src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Experiences/CIC.png"
+                        alt="Creative Innovation Company">
 
                     <div class="exp-text">
 
@@ -625,7 +634,10 @@
                             </div>
 
                             <p>
-                                Lead developer of gamified Virtual Reality experiences. Implemented backend support systems, software licensing systems, and user authentication architectures. Also worked as Game Producer building professional production pipelines and scalable VR development frameworks.
+                                Lead developer of gamified Virtual Reality experiences. Implemented backend support
+                                systems, software licensing systems, and user authentication architectures. Also worked
+                                as Game Producer building professional production pipelines and scalable VR development
+                                frameworks.
                             </p>
                         </div>
 
@@ -639,7 +651,8 @@
                             </div>
 
                             <p>
-                                Restructured and optimized VR production pipelines for previously developed gamified experiences targeting standalone hardware such as Meta Quest 2.
+                                Restructured and optimized VR production pipelines for previously developed gamified
+                                experiences targeting standalone hardware such as Meta Quest 2.
                             </p>
                         </div>
 
@@ -654,8 +667,8 @@
                 <div class="exp-row">
 
                     <img class="exp-img"
-                         src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Experiences/Timba.png"
-                         alt="Timba Games">
+                        src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Experiences/Timba.png"
+                        alt="Timba Games">
 
                     <div class="exp-text">
 
@@ -666,7 +679,8 @@
                         </div>
 
                         <p>
-                            Developed new systems and gameplay features for Puppet Kings, including gameplay mechanics, balancing systems, content integration, optimization, and Steam release preparation.
+                            Developed new systems and gameplay features for Puppet Kings, including gameplay mechanics,
+                            balancing systems, content integration, optimization, and Steam release preparation.
                         </p>
 
                     </div>
@@ -680,8 +694,8 @@
                 <div class="exp-row">
 
                     <img class="exp-img"
-                         src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Experiences/Konecta.png"
-                         alt="Konecta">
+                        src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Experiences/Konecta.png"
+                        alt="Konecta">
 
                     <div class="exp-text">
 
@@ -692,7 +706,9 @@
                         </div>
 
                         <p>
-                            Designed and developed Augmented Reality prototypes and interactive applications using AI-powered virtual assistant logic with C#/.NET, Git/GitHub workflows, and multimedia integrations for web experiences.
+                            Designed and developed Augmented Reality prototypes and interactive applications using
+                            AI-powered virtual assistant logic with C#/.NET, Git/GitHub workflows, and multimedia
+                            integrations for web experiences.
                         </p>
 
                     </div>
@@ -701,13 +717,14 @@
 
             </a>
 
-            <a class="card fade card-link" href="https://www.impresorasysuministros.com/" target="_blank" rel="noopener noreferrer">
+            <a class="card fade card-link" href="https://www.impresorasysuministros.com/" target="_blank"
+                rel="noopener noreferrer">
 
                 <div class="exp-row">
 
                     <img class="exp-img"
-                         src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Experiences/ISC.png"
-                         alt="Impresoras y Suministros de Colombia">
+                        src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Experiences/ISC.png"
+                        alt="Impresoras y Suministros de Colombia">
 
                     <div class="exp-text">
 
@@ -718,7 +735,8 @@
                         </div>
 
                         <p>
-                            Designed and developed web experiences, multimedia systems, animations for AR prototypes, and interaction flows focused on UI/UX design.
+                            Designed and developed web experiences, multimedia systems, animations for AR prototypes,
+                            and interaction flows focused on UI/UX design.
                         </p>
 
                     </div>
@@ -735,96 +753,126 @@
 
         <div class="grid">
 
-            <a class="card fade card-link project-card" href="https://docs.google.com/presentation/d/1-uq_wjShEb_chuhnd25sXdbnl9WBImAd-jWShb1SZEs/present?slide=id.g3df7bd35f58_0_161" target="_blank" rel="noopener noreferrer">
+            <a class="card fade card-link project-card"
+                href="https://docs.google.com/presentation/d/1-uq_wjShEb_chuhnd25sXdbnl9WBImAd-jWShb1SZEs/present?slide=id.g3df7bd35f58_0_161"
+                target="_blank" rel="noopener noreferrer">
 
-                <img class="project-img" src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Projects/PuppetKings.png" alt="Puppet Kings">
+                <img class="project-img"
+                    src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Projects/PuppetKings.png"
+                    alt="Puppet Kings">
 
                 <div class="project-content">
 
                     <h3>Timba Games - Puppet Kings</h3>
 
                     <p>
-                        Breakout-inspired roguelike game featuring unique characters, boss fights, and procedural gameplay systems optimized for Steam.
+                        Breakout-inspired roguelike game featuring unique characters, boss fights, and procedural
+                        gameplay systems optimized for Steam.
                     </p>
 
                 </div>
 
             </a>
 
-            <a class="card fade card-link project-card" href="https://docs.google.com/presentation/d/1-uq_wjShEb_chuhnd25sXdbnl9WBImAd-jWShb1SZEs/present?slide=id.g3df7bd35f58_0_82" target="_blank" rel="noopener noreferrer">
+            <a class="card fade card-link project-card"
+                href="https://docs.google.com/presentation/d/1-uq_wjShEb_chuhnd25sXdbnl9WBImAd-jWShb1SZEs/present?slide=id.g3df7bd35f58_0_82"
+                target="_blank" rel="noopener noreferrer">
 
-                <img class="project-img" src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Projects/MetaVenus.png" alt="Meta Venus">
+                <img class="project-img"
+                    src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Projects/MetaVenus.png"
+                    alt="Meta Venus">
 
                 <div class="project-content">
 
                     <h3>Camsoda – Meta Venus</h3>
 
                     <p>
-                        Metaverse platform featuring hyper-realistic Metahuman avatars with real-time face tracking and live streaming systems.
+                        Metaverse platform featuring hyper-realistic Metahuman avatars with real-time face tracking and
+                        live streaming systems.
                     </p>
 
                 </div>
 
             </a>
 
-            <a class="card fade card-link project-card" href="https://docs.google.com/presentation/d/1-uq_wjShEb_chuhnd25sXdbnl9WBImAd-jWShb1SZEs/present?slide=id.g3df7bd35f58_0_3" target="_blank" rel="noopener noreferrer">
+            <a class="card fade card-link project-card"
+                href="https://docs.google.com/presentation/d/1-uq_wjShEb_chuhnd25sXdbnl9WBImAd-jWShb1SZEs/present?slide=id.g3df7bd35f58_0_3"
+                target="_blank" rel="noopener noreferrer">
 
-                <img class="project-img" src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Projects/Rolimate.png" alt="Rolimate">
+                <img class="project-img"
+                    src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Projects/Rolimate.png"
+                    alt="Rolimate">
 
                 <div class="project-content">
 
                     <h3>Método Super Personitas – Rolimate</h3>
 
                     <p>
-                        Gamified VR experience designed to enhance cognitive and physical abilities in children through neuroeducational technologies.
+                        Gamified VR experience designed to enhance cognitive and physical abilities in children through
+                        neuroeducational technologies.
                     </p>
 
                 </div>
 
             </a>
 
-            <a class="card fade card-link project-card" href="https://docs.google.com/presentation/d/1-uq_wjShEb_chuhnd25sXdbnl9WBImAd-jWShb1SZEs/present?slide=id.g3df7bd35f58_0_15" target="_blank" rel="noopener noreferrer">
+            <a class="card fade card-link project-card"
+                href="https://docs.google.com/presentation/d/1-uq_wjShEb_chuhnd25sXdbnl9WBImAd-jWShb1SZEs/present?slide=id.g3df7bd35f58_0_15"
+                target="_blank" rel="noopener noreferrer">
 
-                <img class="project-img" src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Projects/SEAM.png" alt="SEAM Eje Cafetero">
+                <img class="project-img"
+                    src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Projects/SEAM.png"
+                    alt="SEAM Eje Cafetero">
 
                 <div class="project-content">
 
                     <h3>SEAM - Eje Cafetero</h3>
 
                     <p>
-                        VR physiotherapy experience designed for elderly users inspired by Colombian regions such as Eje Cafetero, Amazonas and Cartagena.
+                        VR physiotherapy experience designed for elderly users inspired by Colombian regions such as Eje
+                        Cafetero, Amazonas and Cartagena.
                     </p>
 
                 </div>
 
             </a>
 
-            <a class="card fade card-link project-card" href="https://docs.google.com/presentation/d/1-uq_wjShEb_chuhnd25sXdbnl9WBImAd-jWShb1SZEs/present?slide=id.g3df7bd35f58_0_21" target="_blank" rel="noopener noreferrer">
+            <a class="card fade card-link project-card"
+                href="https://docs.google.com/presentation/d/1-uq_wjShEb_chuhnd25sXdbnl9WBImAd-jWShb1SZEs/present?slide=id.g3df7bd35f58_0_21"
+                target="_blank" rel="noopener noreferrer">
 
-                <img class="project-img" src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Projects/SEAM.png" alt="SEAM Amazonas">
+                <img class="project-img"
+                    src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Projects/SEAM.png"
+                    alt="SEAM Amazonas">
 
                 <div class="project-content">
 
                     <h3>SEAM - Amazonas</h3>
 
                     <p>
-                        VR physiotherapy experience designed for elderly users inspired by Colombian regions such as Eje Cafetero, Amazonas and Cartagena.
+                        VR physiotherapy experience designed for elderly users inspired by Colombian regions such as Eje
+                        Cafetero, Amazonas and Cartagena.
                     </p>
 
                 </div>
 
             </a>
 
-            <a class="card fade card-link project-card" href="https://docs.google.com/presentation/d/1-uq_wjShEb_chuhnd25sXdbnl9WBImAd-jWShb1SZEs/present?slide=id.g3df7bd35f58_0_27" target="_blank" rel="noopener noreferrer">
+            <a class="card fade card-link project-card"
+                href="https://docs.google.com/presentation/d/1-uq_wjShEb_chuhnd25sXdbnl9WBImAd-jWShb1SZEs/present?slide=id.g3df7bd35f58_0_27"
+                target="_blank" rel="noopener noreferrer">
 
-                <img class="project-img" src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Projects/SEAM%20Amazonas.png" alt="SEAM Cartagena">
+                <img class="project-img"
+                    src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Projects/SEAM%20Amazonas.png"
+                    alt="SEAM Cartagena">
 
                 <div class="project-content">
 
                     <h3>SEAM - Cartagena</h3>
 
                     <p>
-                        VR physiotherapy experience designed for elderly users inspired by Colombian regions such as Eje Cafetero, Amazonas and Cartagena.
+                        VR physiotherapy experience designed for elderly users inspired by Colombian regions such as Eje
+                        Cafetero, Amazonas and Cartagena.
                     </p>
 
                 </div>
@@ -832,9 +880,13 @@
             </a>
 
 
-            <a class="card fade card-link project-card" href="https://docs.google.com/presentation/d/1-uq_wjShEb_chuhnd25sXdbnl9WBImAd-jWShb1SZEs/present?slide=id.g3df7bd35f58_0_39" target="_blank" rel="noopener noreferrer">
+            <a class="card fade card-link project-card"
+                href="https://docs.google.com/presentation/d/1-uq_wjShEb_chuhnd25sXdbnl9WBImAd-jWShb1SZEs/present?slide=id.g3df7bd35f58_0_39"
+                target="_blank" rel="noopener noreferrer">
 
-                <img class="project-img" src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Projects/SEAM.png" alt="Office Experience">
+                <img class="project-img"
+                    src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Projects/SEAM.png"
+                    alt="Office Experience">
 
                 <div class="project-content">
 
@@ -848,16 +900,21 @@
 
             </a>
 
-            <a class="card fade card-link project-card" href="https://docs.google.com/presentation/d/1-uq_wjShEb_chuhnd25sXdbnl9WBImAd-jWShb1SZEs/present?slide=id.g3df7bd35f58_0_33" target="_blank" rel="noopener noreferrer">
+            <a class="card fade card-link project-card"
+                href="https://docs.google.com/presentation/d/1-uq_wjShEb_chuhnd25sXdbnl9WBImAd-jWShb1SZEs/present?slide=id.g3df7bd35f58_0_33"
+                target="_blank" rel="noopener noreferrer">
 
-                <img class="project-img" src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Projects/CIC_Office.png" alt="CIC Office Tour">
+                <img class="project-img"
+                    src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Projects/CIC_Office.png"
+                    alt="CIC Office Tour">
 
                 <div class="project-content">
 
                     <h3>CIC – Office Tour</h3>
 
                     <p>
-                        Interactive VR office tour guided by an AI assistant named ZIA showcasing company products and employee information.
+                        Interactive VR office tour guided by an AI assistant named ZIA showcasing company products and
+                        employee information.
                     </p>
 
                 </div>
@@ -865,9 +922,13 @@
             </a>
 
 
-            <a class="card fade card-link project-card" href="https://docs.google.com/presentation/d/1-uq_wjShEb_chuhnd25sXdbnl9WBImAd-jWShb1SZEs/present?slide=id.g3df7bd35f58_0_51" target="_blank" rel="noopener noreferrer">
+            <a class="card fade card-link project-card"
+                href="https://docs.google.com/presentation/d/1-uq_wjShEb_chuhnd25sXdbnl9WBImAd-jWShb1SZEs/present?slide=id.g3df7bd35f58_0_51"
+                target="_blank" rel="noopener noreferrer">
 
-                <img class="project-img" src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Projects/ItsBoom.png" alt="It's Boom">
+                <img class="project-img"
+                    src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Projects/ItsBoom.png"
+                    alt="It's Boom">
 
                 <div class="project-content">
 
@@ -881,8 +942,8 @@
 
             </a>
 
-        </div> 
-    </section> 
+        </div>
+    </section>
 
     <section id="systems">
         <h2 class="section-title">Systems <span>Developed</span></h2>
@@ -987,13 +1048,15 @@
 
         <div class="grid">
 
-            <a class="card fade card-link" href="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Education/Degrees/DIPLOMA.jpg" target="_blank" rel="noopener noreferrer">
+            <a class="card fade card-link"
+                href="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Education/Degrees/DIPLOMA.jpg"
+                target="_blank" rel="noopener noreferrer">
 
                 <div class="exp-row">
 
                     <img class="exp-img"
-                         src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Education/UPB.png"
-                         alt="Universidad Pontificia Bolivariana">
+                        src="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/Education/UPB.png"
+                        alt="Universidad Pontificia Bolivariana">
 
                     <div class="exp-text">
 
@@ -1019,68 +1082,99 @@
         </div>
     </section>
 
+    <section id="download">
+
+        <h2 class="section-title">
+            Download <span>Resume</span>
+        </h2>
+
+        <p class="section-description">
+            Download my latest CV / Resume in PDF format.
+        </p>
+
+        <div class="grid">
+
+            <div class="card fade" style="text-align:center;">
+
+                <h3 style="margin-bottom:20px;">
+                    Sebastian Segovia Medina CV
+                </h3>
+
+                <a class="btn btn-primary"
+                    href="https://media.githubusercontent.com/media/Sego-Thedevlab/images-gifs/main/CV%20Resume/CV%20-%20SEBASTIAN%20SEGOVIA%20MEDINA_EN.pdf"
+                    target="_blank">
+                    Download PDF
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
     <footer>
         © 2026 Sebastian Segovia Medina — XR Developer & Game Engineer
     </footer>
 
     <script>
-        const observer = new IntersectionObserver(entries=>{
-        entries.forEach(entry=>{
-        if(entry.isIntersecting){
-        entry.target.classList.add('show');
-        }
-        });
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
         });
 
-        document.querySelectorAll('.fade').forEach(el=>observer.observe(el));
+        document.querySelectorAll('.fade').forEach(el => observer.observe(el));
 
         const words = [
-        "XR Developer",
-        "Game Developer",
-        "Unity Engineer",
-        "VR Specialist",
-        "Gameplay Programmer",
-        "Graphics Engineer"
+            "XR Developer",
+            "Game Developer",
+            "Unity Engineer",
+            "VR Specialist",
+            "Gameplay Programmer",
+            "Graphics Engineer"
         ];
 
-        let i=0;
-        let j=0;
-        let currentWord="";
-        let deleting=false;
+        let i = 0;
+        let j = 0;
+        let currentWord = "";
+        let deleting = false;
 
-        function type(){
-        currentWord=words[i];
+        function type() {
+            currentWord = words[i];
 
-        if(deleting){
-        document.getElementById('typing').textContent=currentWord.substring(0,j--);
-        }else{
-        document.getElementById('typing').textContent=currentWord.substring(0,j++);
-        }
+            if (deleting) {
+                document.getElementById('typing').textContent = currentWord.substring(0, j--);
+            } else {
+                document.getElementById('typing').textContent = currentWord.substring(0, j++);
+            }
 
-        if(!deleting && j===currentWord.length){
-        deleting=true;
-        setTimeout(type,1200);
-        return;
-        }
+            if (!deleting && j === currentWord.length) {
+                deleting = true;
+                setTimeout(type, 1200);
+                return;
+            }
 
-        if(deleting && j===0){
-        deleting=false;
-        i=(i+1)%words.length;
-        }
+            if (deleting && j === 0) {
+                deleting = false;
+                i = (i + 1) % words.length;
+            }
 
-        setTimeout(type,deleting?50:100);
+            setTimeout(type, deleting ? 50 : 100);
         }
 
         type();
 
         document.querySelectorAll('.project-title-link').forEach(el => {
-        el.addEventListener('click', (e) => {
-        e.stopPropagation(); // evita que dispare el link de la card
-        window.open(el.dataset.href, '_blank', 'noopener');
-        });
+            el.addEventListener('click', (e) => {
+                e.stopPropagation(); // evita que dispare el link de la card
+                window.open(el.dataset.href, '_blank', 'noopener');
+            });
         });
 
     </script>
 
 </body>
+
 </html>
